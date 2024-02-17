@@ -40,5 +40,17 @@ namespace StringManipulationTests
             // Assert
             Assert.False(result);
         }
+
+        [Fact]
+        public void RemoveWhitespace(){
+            // Arrange
+            var strOperations = new StringOperations();
+
+            // Act
+            var result = strOperations.RemoveWhitespace("Comenzar es la mitad del camino");
+
+            // Assert
+            Assert.Equal(result, "Comenzareslamitaddelcamino");
+        }
     }
 }
