@@ -52,5 +52,26 @@ namespace StringManipulationTests
             // Assert
             Assert.Equal(result, "Comenzareslamitaddelcamino");
         }
+
+        [Fact]
+        public void QuantintyInWords(){
+            // Arrange
+            var strOperations = new StringOperations();
+
+            // Act
+            var result = strOperations.QuantintyInWords("ave", 8);
+
+            // Assert
+            Assert.StartsWith("ocho", result);
+            Assert.Contains("ave", result);
+        }
+
+        [Fact]
+        public void GetStringLength_Exception(){
+
+            var strOperations = new StringOperations();
+
+            Assert.ThrowsAny<ArgumentNullException>(() => strOperations.GetStringLength(null));
+        }
     }
 }
