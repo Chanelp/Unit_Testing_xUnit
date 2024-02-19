@@ -101,5 +101,22 @@ namespace StringManipulationTests
 
             Assert.Equal(3, result);
         }
+
+        [Fact]
+        public void ReadFile(){
+
+            // Arrange
+            var strOperations = new StringOperations();
+            var mockFileReader = new Mock<IFileReaderConector>();
+
+            // Act
+            //mockFileReader.Setup(p => p.ReadString("information.txt")).Returns("Reading file...");
+            mockFileReader.Setup(p => p.ReadString(It.IsAny<string>())).Returns("Reading file...");
+
+            var result = strOperations.ReadFile(mockFileReader.Object, "information.txt");
+
+            // Assert
+            Assert.Equal(result, "Reading file...");
+        }
     }
 }
