@@ -73,5 +73,19 @@ namespace StringManipulationTests
 
             Assert.ThrowsAny<ArgumentNullException>(() => strOperations.GetStringLength(null));
         }
+
+        [Theory]
+        [InlineData("X", 10)]
+        [InlineData("IV", 4)]
+        [InlineData("II", 2)]
+        [InlineData("L", 50)]
+        public void FromRomanToNumber(string romanNumber, int expected)
+        {
+            var strOperations = new StringOperations();
+
+            var result = strOperations.FromRomanToNumber(romanNumber);
+
+            Assert.Equal(result, expected);
+        }
     }
 }
