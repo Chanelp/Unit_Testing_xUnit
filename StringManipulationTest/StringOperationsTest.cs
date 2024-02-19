@@ -29,7 +29,7 @@ namespace StringManipulationTests
             Assert.True(result);
         }
 
-        [Fact(Skip = "Esta prueba no es válida en este momento, TICKET-001")]
+        [Fact(Skip = "Esta prueba no será válida en este momento, TICKET-001")]
         public void IsPalindrome_False(){
             // Arrange
             var strOperations = new StringOperations();
