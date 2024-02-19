@@ -1,5 +1,8 @@
 using Xunit;
 using StringManipulation;
+using Moq;
+using Microsoft.Extensions.Logging;
+
 
 namespace StringManipulationTests
 {
@@ -86,6 +89,17 @@ namespace StringManipulationTests
             var result = strOperations.FromRomanToNumber(romanNumber);
 
             Assert.Equal(result, expected);
+        }
+
+        [Fact]
+        public void CountOccurrences(){
+
+            var mockLogger = new Mock<ILogger<StringOperations>>();
+            var strOperations = new StringOperations(mockLogger.Object);
+
+            var result = strOperations.CountOccurrences("Hello dear friends", 'e');
+
+            Assert.Equal(3, result);
         }
     }
 }
