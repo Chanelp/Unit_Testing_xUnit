@@ -69,7 +69,6 @@ namespace StringManipulation
             string reversed = ReverseString(input);
             return input.Equals(reversed, StringComparison.OrdinalIgnoreCase);
         }
-
         public int CountOccurrences(string input, char character)
         {
             int count = 0;

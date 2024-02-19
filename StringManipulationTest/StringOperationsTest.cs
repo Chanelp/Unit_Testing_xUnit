@@ -118,5 +118,44 @@ namespace StringManipulationTests
             // Assert
             Assert.Equal(result, "Reading file...");
         }
+    
+        [Fact]
+        public void ReverseString(){
+            // Arrange
+            var strOperations = new StringOperations();
+
+            // Act
+            var result = strOperations.ReverseString("welcome");
+
+            // Assert
+            Assert.Equal(result, "emoclew");
+        }
+    
+        [Fact]
+        public void GetStringLength(){
+            var strOperations = new StringOperations();
+
+            var result = strOperations.GetStringLength("Ambivalencia");
+
+            Assert.Equal(result, 12);
+        }
+
+        [Fact]
+        public void TruncateString(){
+            var strOperations = new StringOperations();
+
+            var result = strOperations.TruncateString("Ambiguedad", 4);
+
+            Assert.Equal(result, "Ambi");
+        }
+
+        [Fact]
+        public void Pluralize(){
+            var strOperations = new StringOperations();
+
+            var result = strOperations.Pluralize("Body");
+
+            Assert.Equal(result, "Bodies");
+        }
     }
 }
